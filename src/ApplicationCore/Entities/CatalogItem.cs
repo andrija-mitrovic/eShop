@@ -33,5 +33,41 @@ namespace ApplicationCore.Entities
             CatalogTypeId = catalogTypeId;
             CatalogBrandId = catalogBrandId;
         }
+
+        public void UpdateDetails(string name, string description, decimal price)
+        {
+            if (string.IsNullOrEmpty(name)) throw new ArgumentNullException();
+            if (string.IsNullOrEmpty(description)) throw new ArgumentNullException();
+            if (price <= 0) throw new ArgumentException("Price cannot be less or equal than 0");
+
+            Name = name;
+            Description = description;
+            Price = price;
+        }
+
+        public void UpdateBrand(int catalogBrandId)
+        {
+            if (catalogBrandId == 0) throw new ArgumentException("Catalog brand Id cannot be 0");
+
+            CatalogBrandId = catalogBrandId;
+        }
+
+        public void UpdateType(int catalogTypeId)
+        {
+            if (catalogTypeId == 0) throw new ArgumentException("Catalog type Id cannot be 0");
+
+            CatalogTypeId = catalogTypeId;
+        }
+
+        public void UpdatePictureUri(string pictureName)
+        {
+            if (string.IsNullOrEmpty(pictureName))
+            {
+                PictureUri = string.Empty;
+                return;
+            }
+
+            PictureUri = $@"images\products\{pictureName}?{new DateTime().Ticks}";
+        }
     }
 }
