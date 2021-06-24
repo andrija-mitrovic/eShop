@@ -8,5 +8,10 @@ namespace ApplicationCore.Entities
 {
     public class CatalogType
     {
+        public string Type { get; private set; }
+        public CatalogType(string type)
+        {
+            Type = type;
+        }
     }
 }
