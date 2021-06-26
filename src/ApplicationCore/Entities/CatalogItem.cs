@@ -36,7 +36,10 @@ namespace ApplicationCore.Entities
 
         public void UpdateDetails(string name, string description, decimal price)
         {
-            if (string.IsNullOrEmpty(name)) throw new ArgumentNullException();
+            if (name==null) throw new ArgumentNullException();
+            if (name == string.Empty) throw new ArgumentException("Name cannot be empty");
+            if (description == null) throw new ArgumentNullException();
+            if (description == string.Empty) throw new ArgumentException("Description cannot be empty");
             if (string.IsNullOrEmpty(description)) throw new ArgumentNullException();
             if (price <= 0) throw new ArgumentException("Price cannot be less or equal than 0");
 
