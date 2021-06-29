@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Config\" />
     <Folder Include="Data\UnitOfWork\" />
     <Folder Include="Data\Repositories\" />
   </ItemGroup>
