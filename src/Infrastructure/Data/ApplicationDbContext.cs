@@ -3,12 +3,7 @@ using ApplicationCore.Entities.BasketAggregate;
 using ApplicationCore.Entities.BuyerAggregate;
 using ApplicationCore.Entities.OrderAggregate;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Data
 {
